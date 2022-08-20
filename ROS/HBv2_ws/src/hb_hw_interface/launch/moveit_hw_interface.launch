@@ -1,0 +1,38 @@
+<launch>
+    <arg name="gazebo_gui" default="true"/>
+    <arg name="paused" default="false"/>
+    <arg name="use_rviz" default="true" />
+
+    <!-- Load the URDF to the parameter server -->
+    <param name="robot_description" textfile="$(find HBV2_URDF_description)/urdf/HBV2_URDF.urdf"/>
+
+    <!-- Convert joint states to /tf tranforms -->
+    <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher"/>
+    <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher"/>
+    
+    <include file="$(find HBv2_moveit)/launch/ros_controllers.launch"/>
+    
+    <node name="hw_interface_myversion_m" pkg="hb_hw_interface" type="hw_interface_myversion_m" output="screen"/> 
+    <rosparam file="$(find hb_hw_interface)/config/hw_interface_parameters.yaml" command="load"/>
+
+    <!-- MOVEIT -->
+    <include file="$(find HBv2_moveit)/launch/moveit_rviz.launch" if="$(arg use_rviz)">
+        <arg name="rviz_config" value="$(find HBv2_moveit)/launch/moveit.rviz"/>
+        <arg name="debug" value="false"/>
+    </include>
+    <!-- Load the URDF, SRDF and other .yaml configuration files on the param server -->
+    <include file="$(find HBv2_moveit)/launch/planning_context.launch">
+    <arg name="load_robot_description" value="true"/>
+    </include>
+    
+    <!-- Remap follow_joint_trajectory /-->
+    <remap from="/joint_trajectory_action" to="/position_trajectory_controller/follow_joint_trajectory"/>
+    <remap from="Gripper_controller/joint_trajectory_action" to="/gripper_controller/follow_joint_trajectory"/>
+
+    <!-- Run the main MoveIt executable without trajectory execution (we do not have controllers configured by default)  -->
+    <include file="$(find HBv2_moveit)/launch/move_group.launch">
+    <arg name="allow_trajectory_execution" value="true"/>
+    <arg name="moveit_controller_manager" value="simple"/>
+    </include>
+
+</launch>

@@ -1,0 +1,511 @@
+<?xml version="1.0" ?>
+<robot name="HBV2_URDF" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+<xacro:include filename="$(find HBV2_URDF_description)/urdf/materials.xacro" />
+<xacro:include filename="$(find HBV2_URDF_description)/urdf/HBV2_URDF.trans" />
+<xacro:include filename="$(find HBV2_URDF_description)/urdf/HBV2_URDF.gazebo" />
+<link name="base_link">
+  <inertial>
+    <origin xyz="0.000850703825743988 0.49664524660197173 0.1431193454180441" rpy="0 0 0"/>
+    <mass value="83.16735088772546"/>
+    <inertia ixx="2.05207" iyy="3.182622" izz="4.445124" ixy="-0.008757" iyz="0.00132" ixz="0.001707"/>
+  </inertial>
+  <visual>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://HBV2_URDF_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://HBV2_URDF_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="Elbow_Fi_1">
+  <inertial>
+    <origin xyz="2.1124811195401185e-05 -0.004476902241319081 0.04500687296019246" rpy="0 0 0"/>
+    <mass value="2.6957216092371197"/>
+    <inertia ixx="0.007517" iyy="0.004928" izz="0.005378" ixy="-2e-06" iyz="0.000521" ixz="-4e-06"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.001635 -0.496054 -0.667865" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://HBV2_URDF_description/meshes/Elbow_Fi_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.001635 -0.496054 -0.667865" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://HBV2_URDF_description/meshes/Elbow_Fi_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="Wrist_Fi_1">
+  <inertial>
+    <origin xyz="3.808198436288019e-05 -0.003748542098453378 0.042775550119039774" rpy="0 0 0"/>
+    <mass value="2.1119426583573655"/>
+    <inertia ixx="0.004759" iyy="0.003093" izz="0.003312" ixy="-3e-06" iyz="0.000293" ixz="-3e-06"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.001635 -0.502604 -0.975809" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://HBV2_URDF_description/meshes/Wrist_Fi_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.001635 -0.502604 -0.975809" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://HBV2_URDF_description/meshes/Wrist_Fi_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="Shoulder_Theta_1">
+  <inertial>
+    <origin xyz="-0.09893520482510751 5.81749154230371e-05 0.04088469510241685" rpy="0 0 0"/>
+    <mass value="24.00560665158243"/>
+    <inertia ixx="0.187102" iyy="0.417351" izz="0.523776" ixy="0.000137" iyz="-9.7e-05" ixz="0.012323"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.001635 -0.496054 -0.246551" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://HBV2_URDF_description/meshes/Shoulder_Theta_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.001635 -0.496054 -0.246551" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://HBV2_URDF_description/meshes/Shoulder_Theta_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="Shoulder_Fi_1">
+  <inertial>
+    <origin xyz="2.233815221067809e-05 -0.00012306065436118452 0.03488942876530954" rpy="0 0 0"/>
+    <mass value="6.6711474057675115"/>
+    <inertia ixx="0.026216" iyy="0.021888" izz="0.027122" ixy="-0.0" iyz="4.9e-05" ixz="-1.5e-05"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.001635 -0.496054 -0.318719" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://HBV2_URDF_description/meshes/Shoulder_Fi_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.001635 -0.496054 -0.318719" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://HBV2_URDF_description/meshes/Shoulder_Fi_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="RSL__1__1">
+  <inertial>
+    <origin xyz="-0.00602072788649264 0.0004602032959704072 0.01213633179737239" rpy="0 0 0"/>
+    <mass value="0.028211625634964734"/>
+    <inertia ixx="7e-06" iyy="7e-06" izz="1e-06" ixy="0.0" iyz="-1e-06" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.012465 -0.489604 -1.149476" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://HBV2_URDF_description/meshes/RSL__1__1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.012465 -0.489604 -1.149476" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://HBV2_URDF_description/meshes/RSL__1__1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="RightProng__1__1">
+  <inertial>
+    <origin xyz="0.01500020886022858 -0.00934695725623802 0.03142613696884822" rpy="0 0 0"/>
+    <mass value="0.618571467723155"/>
+    <inertia ixx="0.000645" iyy="0.000583" izz="0.000147" ixy="-0.0" iyz="-8.8e-05" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.012665 -0.494919 -1.187076" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://HBV2_URDF_description/meshes/RightProng__1__1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.012665 -0.494919 -1.187076" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://HBV2_URDF_description/meshes/RightProng__1__1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="LeftProng__2__1">
+  <inertial>
+    <origin xyz="0.015000208860241815 0.009341259465312834 0.031406978994162005" rpy="0 0 0"/>
+    <mass value="0.6189487887088181"/>
+    <inertia ixx="0.000645" iyy="0.000584" izz="0.000147" ixy="-0.0" iyz="8.8e-05" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.012665 -0.514289 -1.187076" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://HBV2_URDF_description/meshes/LeftProng__2__1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.012665 -0.514289 -1.187076" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://HBV2_URDF_description/meshes/LeftProng__2__1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="LSL__3__1">
+  <inertial>
+    <origin xyz="-0.006020728028839378 -0.00046019628870652696 0.012136325015627225" rpy="0 0 0"/>
+    <mass value="0.028211647703611422"/>
+    <inertia ixx="7e-06" iyy="7e-06" izz="1e-06" ixy="-0.0" iyz="1e-06" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.012465 -0.519604 -1.149476" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://HBV2_URDF_description/meshes/LSL__3__1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.012465 -0.519604 -1.149476" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://HBV2_URDF_description/meshes/LSL__3__1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="Wheel_RF_1">
+  <inertial>
+    <origin xyz="1.0816852191730675e-08 -0.02075000000044916 2.772021913399758e-07" rpy="0 0 0"/>
+    <mass value="21.410160340290883"/>
+    <inertia ixx="0.079808" iyy="0.140288" izz="0.079808" ixy="-0.0" iyz="0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.178899 -0.266079 -0.114299" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://HBV2_URDF_description/meshes/Wheel_RF_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.178899 -0.266079 -0.114299" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://HBV2_URDF_description/meshes/Wheel_RF_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="Wheel_LF_1">
+  <inertial>
+    <origin xyz="1.0816852247241826e-08 0.0207499999995574 2.772021904656752e-07" rpy="0 0 0"/>
+    <mass value="21.410160340290883"/>
+    <inertia ixx="0.079808" iyy="0.140288" izz="0.079808" ixy="-0.0" iyz="0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.178899 -0.726029 -0.114299" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://HBV2_URDF_description/meshes/Wheel_LF_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.178899 -0.726029 -0.114299" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://HBV2_URDF_description/meshes/Wheel_LF_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="Wheel_RB_1">
+  <inertial>
+    <origin xyz="4.974939914748067e-07 -0.020750000000448382 2.7720219129834245e-07" rpy="0 0 0"/>
+    <mass value="21.410160340290883"/>
+    <inertia ixx="0.079808" iyy="0.140288" izz="0.079808" ixy="-0.0" iyz="-0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.175629 -0.266079 -0.114299" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://HBV2_URDF_description/meshes/Wheel_RB_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.175629 -0.266079 -0.114299" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://HBV2_URDF_description/meshes/Wheel_RB_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="Wheel_LB_1">
+  <inertial>
+    <origin xyz="4.974939914470511e-07 0.020749999999557622 2.772021902019972e-07" rpy="0 0 0"/>
+    <mass value="21.410160340290883"/>
+    <inertia ixx="0.079808" iyy="0.140288" izz="0.079808" ixy="-0.0" iyz="-0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.175629 -0.726029 -0.114299" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://HBV2_URDF_description/meshes/Wheel_LB_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.175629 -0.726029 -0.114299" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://HBV2_URDF_description/meshes/Wheel_LB_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="Camera_Rod__1__1">
+  <inertial>
+    <origin xyz="-4.99966369915672e-07 -1.0508501291361938e-09 0.19999953386361996" rpy="0 0 0"/>
+    <mass value="1.327380701446504"/>
+    <inertia ixx="0.017743" iyy="0.017743" izz="8.9e-05" ixy="-0.0" iyz="0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.315312 -0.496055 -0.252951" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://HBV2_URDF_description/meshes/Camera_Rod__1__1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.315312 -0.496055 -0.252951" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://HBV2_URDF_description/meshes/Camera_Rod__1__1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="Camera_Housing_1">
+  <inertial>
+    <origin xyz="-0.0010156886248149921 3.0852436220807355e-06 0.00711860710983836" rpy="0 0 0"/>
+    <mass value="1.3677782029205452"/>
+    <inertia ixx="0.00192" iyy="0.000885" izz="0.001671" ixy="-0.0" iyz="-0.0" ixz="1.3e-05"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.315312 -0.496055 -0.652951" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://HBV2_URDF_description/meshes/Camera_Housing_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.315312 -0.496055 -0.652951" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://HBV2_URDF_description/meshes/Camera_Housing_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="Elbow_Theta_1">
+  <inertial>
+    <origin xyz="5.025678449546841e-06 0.028944188172434826 0.09816588851369912" rpy="0 0 0"/>
+    <mass value="11.80726031614154"/>
+    <inertia ixx="0.095065" iyy="0.089799" izz="0.043575" ixy="2e-06" iyz="-0.001031" ixz="-5e-06"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.001635 -0.468554 -0.409273" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://HBV2_URDF_description/meshes/Elbow_Theta_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.001635 -0.468554 -0.409273" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://HBV2_URDF_description/meshes/Elbow_Theta_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="Wrist_Theta_1">
+  <inertial>
+    <origin xyz="-3.840368737391929e-06 -0.05148249173289887 0.0806903784476557" rpy="0 0 0"/>
+    <mass value="9.499760886023896"/>
+    <inertia ixx="0.061147" iyy="0.051491" izz="0.033598" ixy="2e-06" iyz="-0.002054" ixz="-6e-06"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.001635 -0.552804 -0.746549" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://HBV2_URDF_description/meshes/Wrist_Theta_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.001635 -0.552804 -0.746549" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://HBV2_URDF_description/meshes/Wrist_Theta_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="Gripper_Core_1">
+  <inertial>
+    <origin xyz="-0.0003955052408598993 -0.05257449949398196 0.04646356867960444" rpy="0 0 0"/>
+    <mass value="3.431629449758737"/>
+    <inertia ixx="0.009975" iyy="0.005271" izz="0.007649" ixy="3e-06" iyz="-0.000331" ixz="5.2e-05"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.001635 -0.555104 -1.048764" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://HBV2_URDF_description/meshes/Gripper_Core_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.001635 -0.555104 -1.048764" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://HBV2_URDF_description/meshes/Gripper_Core_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<joint name="Elbow_Theta" type="revolute">
+  <origin xyz="0.0 0.0275 0.258592" rpy="0 0 0"/>
+  <parent link="Elbow_Theta_1"/>
+  <child link="Elbow_Fi_1"/>
+  <axis xyz="-0.0 -0.0 -1.0"/>
+  <limit upper="1.570796" lower="-1.570796" effort="100" velocity="100"/>
+</joint>
+
+<joint name="Wrist_Theta" type="revolute">
+  <origin xyz="0.0 -0.0502 0.22926" rpy="0 0 0"/>
+  <parent link="Wrist_Theta_1"/>
+  <child link="Wrist_Fi_1"/>
+  <axis xyz="-0.0 -0.0 -1.0"/>
+  <limit upper="1.570796" lower="-1.570796" effort="100" velocity="100"/>
+</joint>
+
+<joint name="Arm_Base" type="fixed">
+  <origin xyz="0.001635 0.496054 0.246551" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="Shoulder_Theta_1"/>
+</joint>
+
+<joint name="Shoulder_Theta_Joint" type="revolute">
+  <origin xyz="0.0 0.0 0.072168" rpy="0 0 0"/>
+  <parent link="Shoulder_Theta_1"/>
+  <child link="Shoulder_Fi_1"/>
+  <axis xyz="0.0 -0.0 -1.0"/>
+  <limit upper="1.570796" lower="-1.570796" effort="100" velocity="100"/>
+</joint>
+
+<joint name="GCore_RSL" type="revolute">
+  <origin xyz="-0.0141 -0.0655 0.100712" rpy="0 0 0"/>
+  <parent link="Gripper_Core_1"/>
+  <child link="RSL__1__1"/>
+  <axis xyz="1.0 0.0 0.0"/>
+  <limit upper="1.090831" lower="0.0" effort="100" velocity="100"/>
+</joint>
+
+<joint name="RSL_RightProng" type="revolute">
+  <origin xyz="-0.0002 0.005315 0.0376" rpy="0 0 0"/>
+  <parent link="RSL__1__1"/>
+  <child link="RightProng__1__1"/>
+  <axis xyz="-1.0 -0.0 -0.0"/>
+  <limit upper="1.090831" lower="0.0" effort="100" velocity="100"/>
+</joint>
+
+<joint name="LSL_LeftProng" type="revolute">
+  <origin xyz="-0.0002 -0.005315 0.0376" rpy="0 0 0"/>
+  <parent link="LSL__3__1"/>
+  <child link="LeftProng__2__1"/>
+  <axis xyz="-1.0 -0.0 -0.0"/>
+  <limit upper="0.0" lower="-1.090831" effort="100" velocity="100"/>
+</joint>
+
+<joint name="GCore_LSL" type="revolute">
+  <origin xyz="-0.0141 -0.0355 0.100712" rpy="0 0 0"/>
+  <parent link="Gripper_Core_1"/>
+  <child link="LSL__3__1"/>
+  <axis xyz="1.0 0.0 0.0"/>
+  <limit upper="0.0" lower="-1.090831" effort="100" velocity="100"/>
+</joint>
+
+<joint name="Base_WheelRF" type="continuous">
+  <origin xyz="0.178899 0.266079 0.114299" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="Wheel_RF_1"/>
+  <axis xyz="0.0 -1.0 0.0"/>
+</joint>
+
+<joint name="Base_WheelLF" type="continuous">
+  <origin xyz="0.178899 0.726029 0.114299" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="Wheel_LF_1"/>
+  <axis xyz="-0.0 1.0 0.0"/>
+</joint>
+
+<joint name="Base_WheelRB" type="continuous">
+  <origin xyz="-0.175629 0.266079 0.114299" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="Wheel_RB_1"/>
+  <axis xyz="-0.0 -1.0 0.0"/>
+</joint>
+
+<joint name="Base_WheelLB" type="continuous">
+  <origin xyz="-0.175629 0.726029 0.114299" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="Wheel_LB_1"/>
+  <axis xyz="0.0 1.0 0.0"/>
+</joint>
+
+<joint name="Base_CameraRod" type="fixed">
+  <origin xyz="-0.316947 1e-06 0.0064" rpy="0 0 0"/>
+  <parent link="Shoulder_Theta_1"/>
+  <child link="Camera_Rod__1__1"/>
+</joint>
+
+<joint name="CameraRod_CameraHousing" type="fixed">
+  <origin xyz="0.0 0.0 0.4" rpy="0 0 0"/>
+  <parent link="Camera_Rod__1__1"/>
+  <child link="Camera_Housing_1"/>
+</joint>
+
+<joint name="Shoulder_Fi" type="revolute">
+  <origin xyz="0.0 -0.0275 0.090554" rpy="0 0 0"/>
+  <parent link="Shoulder_Fi_1"/>
+  <child link="Elbow_Theta_1"/>
+  <axis xyz="0.0 1.0 -0.0"/>
+  <limit upper="1.396263" lower="0.0" effort="100" velocity="100"/>
+</joint>
+
+<joint name="Elbow_Fi" type="revolute">
+  <origin xyz="0.0 0.05675 0.078684" rpy="0 0 0"/>
+  <parent link="Elbow_Fi_1"/>
+  <child link="Wrist_Theta_1"/>
+  <axis xyz="0.0 1.0 -0.0"/>
+  <limit upper="1.396263" lower="-1.396263" effort="100" velocity="100"/>
+</joint>
+
+<joint name="Wrist_Fi" type="revolute">
+  <origin xyz="0.0 0.0525 0.072955" rpy="0 0 0"/>
+  <parent link="Wrist_Fi_1"/>
+  <child link="Gripper_Core_1"/>
+  <axis xyz="0.0 1.0 -0.0"/>
+  <limit upper="1.570796" lower="-1.570796" effort="100" velocity="100"/>
+</joint>
+
+</robot>

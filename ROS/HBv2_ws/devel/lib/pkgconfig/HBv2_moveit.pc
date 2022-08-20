@@ -1,0 +1,8 @@
+prefix=/home/ubuntu20/HBv2_ws/devel
+
+Name: HBv2_moveit
+Description: Description of HBv2_moveit
+Version: 0.3.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

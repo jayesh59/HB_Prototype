@@ -1,0 +1,90 @@
+<?xml version="1.0" ?>
+<robot name="Camera_URDF" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+<xacro:include filename="$(find Camera_URDF_description)/urdf/materials.xacro" />
+<xacro:include filename="$(find Camera_URDF_description)/urdf/Camera_URDF.trans" />
+<xacro:include filename="$(find Camera_URDF_description)/urdf/Camera_URDF.gazebo" />
+
+<link name="world"/>
+  <joint name="world_joint" type="fixed">
+    <origin rpy="0 0 0" xyz="0 -0.5 0"/>
+    <parent link="world"/>
+    <child link="base_link"/>
+  </joint>
+
+<link name="base_link">
+  <inertial>
+    <origin rpy="0 0 0" xyz="0.05012497939960306 0.060625563842543334 0.2550536019907248"/>
+    <mass value="2.675090214545101"/>
+    <inertia ixx="0.033417" ixy="-0.000275" ixz="-0.004315" iyy="0.033417" iyz="-0.004315" izz="0.003178"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+    <geometry>
+      <mesh filename="package://Camera_URDF_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+    <geometry>
+      <mesh filename="package://Camera_URDF_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="Camera_R_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="0.004604545877300012 0.004697740324517516 0.009609252734166684"/>
+    <mass value="0.006742869651498013"/>
+    <inertia ixx="0.001" ixy="0.001" ixz="-0.001" iyy="0.001" iyz="-0.001" izz="0.001"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-0.105324 -0.058548 -0.325358"/>
+    <geometry>
+      <mesh filename="package://Camera_URDF_description/meshes/Camera_R_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-0.105324 -0.058548 -0.325358"/>
+    <geometry>
+      <mesh filename="package://Camera_URDF_description/meshes/Camera_R_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="Camera_L_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="0.00469774160711893 0.004604544594698723 0.00960925228975218"/>
+    <mass value="0.0067428696514977736"/>
+    <inertia ixx="0.001" ixy="0.001" ixz="-0.001" iyy="0.001" iyz="-0.001" izz="0.001"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-0.048048 -0.115824 -0.325358"/>
+    <geometry>
+      <mesh filename="package://Camera_URDF_description/meshes/Camera_L_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-0.048048 -0.115824 -0.325358"/>
+    <geometry>
+      <mesh filename="package://Camera_URDF_description/meshes/Camera_L_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<joint name="Camera_Right" type="fixed">
+  <origin rpy="0 0 0" xyz="0.105324 0.058548 0.325358"/>
+  <parent link="base_link"/>
+  <child link="Camera_R_1"/>
+</joint>
+
+<joint name="Camera_Left" type="fixed">
+  <origin rpy="0 0 0" xyz="0.048048 0.115824 0.325358"/>
+  <parent link="base_link"/>
+  <child link="Camera_L_1"/>
+</joint>
+
+</robot>

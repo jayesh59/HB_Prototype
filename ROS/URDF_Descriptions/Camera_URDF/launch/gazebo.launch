@@ -1,0 +1,21 @@
+<launch>
+
+  <arg name="image_view" default="image_rect_color"/>
+
+  <param command="$(find xacro)/xacro $(find Camera_URDF_description)/urdf/Camera_URDF.xacro" name="camera_description"/>
+  <node args="-param camera_description -urdf -model Camera_URDF" name="spawn_urdf" pkg="gazebo_ros" type="spawn_model"/>
+  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+    <arg name="paused" value="false"/>
+    <arg name="use_sim_time" value="true"/>
+    <arg name="gui" value="true"/>
+    <arg name="headless" value="false"/>
+    <arg name="debug" value="false"/>
+  </include>
+  <include file="$(find Camera_URDF_description)/launch/display.launch"/>
+
+  <node pkg="stereo_image_proc" type="stereo_image_proc" name="stereo_image_processing" ns="stereo"/>
+  <node name="stereo_cam" pkg="image_view" type="stereo_view" >
+    <remap from="image" to="$(arg image_view)" />
+  </node>
+
+</launch>

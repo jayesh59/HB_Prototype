@@ -1,0 +1,8 @@
+prefix=/home/hb-jetson/camera_ws/install
+
+Name: stereo_launch
+Description: Description of stereo_launch
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

@@ -1,0 +1,8 @@
+prefix=/home/ubuntu20/HBv2_ws/install
+
+Name: HBV2_URDF_description
+Description: Description of HBV2_URDF_description
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

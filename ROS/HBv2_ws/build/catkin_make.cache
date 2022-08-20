@@ -1,0 +1,2 @@
+HBV2_URDF_description:HBv2_moveit:hb_hw_interface:hw_control_interface_myversion:image_pipeline/camera_calibration:image_pipeline/depth_image_proc:image_pipeline/image_pipeline:image_pipeline/image_proc:image_pipeline/image_publisher:image_pipeline/image_rotate:image_pipeline/image_view:image_pipeline/stereo_image_proc:odom_work:robot_localization:rosparam_shortcuts:rtabmap_ros
+-DCATKIN_DEVEL_PREFIX=/home/ubuntu20/HBv2_ws/devel -DCMAKE_INSTALL_PREFIX=/home/ubuntu20/HBv2_ws/install -G Unix Makefiles

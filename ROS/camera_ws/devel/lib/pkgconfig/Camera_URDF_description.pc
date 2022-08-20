@@ -1,0 +1,8 @@
+prefix=/home/hb-jetson/camera_ws/devel
+
+Name: Camera_URDF_description
+Description: Description of Camera_URDF_description
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

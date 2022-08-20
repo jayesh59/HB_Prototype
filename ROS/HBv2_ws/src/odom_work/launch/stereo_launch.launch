@@ -1,0 +1,22 @@
+<launch>
+    <arg name="image_view" default="image_rect_color"/>
+    <node pkg="nodelet" type="nodelet" name="pipeline" args="manager" />
+
+    <include file="$(find stereo_image_proc)/launch/stereo_image_proc.launch" ns="stereo">
+        <arg name="manager" value="/pipeline"/>
+    </include>
+    
+    <node pkg="stereo_image_proc" type="stereo_image_proc" name="stereo_image_proc" ns="stereo">
+        <param name="queue_size" value="20"/>
+        <param name="approximate_sync" value="True"/>
+    </node>
+
+    <node name="stereo_cam" pkg="image_view" type="stereo_view" output="screen">
+        <param name="queue_size" value="20"/>
+        <param name="approximate_sync" value="True"/>
+        <remap from="image" to="$(arg image_view)" />
+    </node>
+
+    <node name="dynamic_reconfigure_load" pkg="dynamic_reconfigure" type="dynparam" args="load /stereo/disparity $(find odom_work)/config/disparity_params_raw.yaml" />
+
+</launch>

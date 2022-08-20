@@ -1,0 +1,19 @@
+controller_list:
+  - name: ""
+    action_ns: joint_trajectory_action
+    default: True
+    type: FollowJointTrajectory
+    joints:
+      - Shoulder_Fi
+      - Shoulder_Theta_Joint
+      - Elbow_Fi
+      - Elbow_Theta
+      - Wrist_Fi
+      - Wrist_Theta
+
+  - name: Gripper_controller
+    action_ns: joint_trajectory_action
+    default: True
+    type: FollowJointTrajectory
+    joints:
+      - GCore_RSL

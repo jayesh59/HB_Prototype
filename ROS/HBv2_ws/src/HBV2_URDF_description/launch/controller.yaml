@@ -1,0 +1,63 @@
+HBV2_URDF_controller:
+  # Publish all joint states -----------------------------------
+  joint_state_controller:
+    type: joint_state_controller/JointStateController
+    publish_rate: 50
+
+  # Position Controllers --------------------------------------
+  Elbow_Theta_position_controller:
+    type: position_controllers/JointPositionController
+    joint: Elbow_Theta
+    pid: {p: 100.0, i: 0.01, d: 10.0}
+  Wrist_Theta_position_controller:
+    type: position_controllers/JointPositionController
+    joint: Wrist_Theta
+    pid: {p: 100.0, i: 0.01, d: 10.0}
+  Shoulder_Theta_Joint_position_controller:
+    type: position_controllers/JointPositionController
+    joint: Shoulder_Theta_Joint
+    pid: {p: 100.0, i: 0.01, d: 10.0}
+  GCore_RSL_position_controller:
+    type: position_controllers/JointPositionController
+    joint: GCore_RSL
+    pid: {p: 100.0, i: 0.01, d: 10.0}
+  RSL_RightProng_position_controller:
+    type: position_controllers/JointPositionController
+    joint: RSL_RightProng
+    pid: {p: 100.0, i: 0.01, d: 10.0}
+  LSL_LeftProng_position_controller:
+    type: position_controllers/JointPositionController
+    joint: LSL_LeftProng
+    pid: {p: 100.0, i: 0.01, d: 10.0}
+  GCore_LSL_position_controller:
+    type: position_controllers/JointPositionController
+    joint: GCore_LSL
+    pid: {p: 100.0, i: 0.01, d: 10.0}
+  Base_WheelRF_position_controller:
+    type: position_controllers/JointPositionController
+    joint: Base_WheelRF
+    pid: {p: 100.0, i: 0.01, d: 10.0}
+  Base_WheelLF_position_controller:
+    type: position_controllers/JointPositionController
+    joint: Base_WheelLF
+    pid: {p: 100.0, i: 0.01, d: 10.0}
+  Base_WheelRB_position_controller:
+    type: position_controllers/JointPositionController
+    joint: Base_WheelRB
+    pid: {p: 100.0, i: 0.01, d: 10.0}
+  Base_WheelLB_position_controller:
+    type: position_controllers/JointPositionController
+    joint: Base_WheelLB
+    pid: {p: 100.0, i: 0.01, d: 10.0}
+  Shoulder_Fi_position_controller:
+    type: position_controllers/JointPositionController
+    joint: Shoulder_Fi
+    pid: {p: 100.0, i: 0.01, d: 10.0}
+  Elbow_Fi_position_controller:
+    type: position_controllers/JointPositionController
+    joint: Elbow_Fi
+    pid: {p: 100.0, i: 0.01, d: 10.0}
+  Wrist_Fi_position_controller:
+    type: position_controllers/JointPositionController
+    joint: Wrist_Fi
+    pid: {p: 100.0, i: 0.01, d: 10.0}

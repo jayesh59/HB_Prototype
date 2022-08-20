@@ -1,0 +1,9 @@
+<launch>
+
+<rosparam file="$(find HBV2_URDF_description)/launch/controller.yaml" command="load"/>
+<node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false" output="screen" ns="HBV2_URDF" args="Elbow_Theta_position_controller Wrist_Theta_position_controller Shoulder_Theta_Joint_position_controller GCore_RSL_position_controller RSL_RightProng_position_controller LSL_LeftProng_position_controller GCore_LSL_position_controller Base_WheelRF_position_controller Base_WheelLF_position_controller Base_WheelRB_position_controller Base_WheelLB_position_controller Shoulder_Fi_position_controller Elbow_Fi_position_controller Wrist_Fi_position_controller joint_state_controller "/>
+<node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" respawn="false" output="screen">
+  <remap from="/joint_states" to="/HBV2_URDF/joint_states"/>
+</node>
+
+</launch>

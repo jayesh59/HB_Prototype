@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<launch>
+
+  <!-- Load joint controller configurations from YAML file to parameter server -->
+  <rosparam file="$(find HBv2_moveit)/config/ros_controllers.yaml" command="load"/>
+
+  <!-- Load the controllers -->
+  <node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false"
+  output="screen" args="position_trajectory_controller joint_state_controller"/>
+
+  <node name="controller_spawner2" pkg="controller_manager" type="spawner" respawn="false"
+    output="screen" args="gripper_controller"/>
+  
+  <node args="mobile_base_controller" name="controller_spawner3" output="screen" pkg="controller_manager" respawn="false" type="spawner"/>
+
+
+</launch>

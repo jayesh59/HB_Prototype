@@ -1,0 +1,18 @@
+
+P1: 200.0
+P2: 400.0
+correlation_window_size: 15
+disp12MaxDiff: 0
+disparity_range: 64
+fullDP: false
+
+prefilter_cap: 63
+prefilter_size: 255
+speckle_range: 20
+speckle_size: 1000
+state: true
+stereo_algorithm: 0
+texture_threshold: 1024
+type: ''
+uniqueness_ratio: 5.0
+min_disparity: 0

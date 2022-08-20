@@ -1,0 +1,23 @@
+# Publish joint_states
+joint_state_controller:
+  type: joint_state_controller/JointStateController
+  publish_rate: 50
+
+generic_hw_control_loop: #namespace mentioned in the generic_interface_myversion_code.cpp in the constructor for the parameters.
+  loop_hz: 200 # 250 to emulate serial pause COMMAND_PERIOD 0.0055 , SERIAL_PAUSE 0.004
+  cycle_time_error_threshold: 0.1
+
+# Settings for ros_control hardware interface (used in generic_hw_interface.cpp)
+hardware_interface:
+   joints:
+      - Wrist_Fi
+      - Wrist_Theta
+      - Elbow_Fi
+      - Elbow_Theta
+      - Shoulder_Fi
+      - Shoulder_Theta_Joint
+      - GCore_RSL
+      - Base_WheelLF
+      - Base_WheelLB
+      - Base_WheelRB
+      - Base_WheelRF

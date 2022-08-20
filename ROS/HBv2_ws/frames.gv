@@ -1,0 +1,24 @@
+digraph G {
+"base_link" -> "Shoulder_Theta_1"[label="Broadcaster: /robot_state_publisher\nAverage rate: 10000.000 Hz\nMost recent transform: 0.000 ( 10.362 sec old)\nBuffer length: 0.000 sec\n"];
+"virtual_link" -> "base_link"[label="Broadcaster: /robot_state_publisher\nAverage rate: 10000.000 Hz\nMost recent transform: 0.000 ( 10.362 sec old)\nBuffer length: 0.000 sec\n"];
+"Shoulder_Theta_1" -> "Camera_Rod__1__1"[label="Broadcaster: /robot_state_publisher\nAverage rate: 10000.000 Hz\nMost recent transform: 0.000 ( 10.362 sec old)\nBuffer length: 0.000 sec\n"];
+"Camera_Rod__1__1" -> "Camera_Housing_1"[label="Broadcaster: /robot_state_publisher\nAverage rate: 10000.000 Hz\nMost recent transform: 0.000 ( 10.362 sec old)\nBuffer length: 0.000 sec\n"];
+"base_link" -> "Wheel_LB_1"[label="Broadcaster: /robot_state_publisher\nAverage rate: 50.556 Hz\nMost recent transform: 10.362 ( 0.000 sec old)\nBuffer length: 1.800 sec\n"];
+"base_link" -> "Wheel_LF_1"[label="Broadcaster: /robot_state_publisher\nAverage rate: 50.556 Hz\nMost recent transform: 10.362 ( 0.000 sec old)\nBuffer length: 1.800 sec\n"];
+"base_link" -> "Wheel_RB_1"[label="Broadcaster: /robot_state_publisher\nAverage rate: 50.556 Hz\nMost recent transform: 10.362 ( 0.000 sec old)\nBuffer length: 1.800 sec\n"];
+"base_link" -> "Wheel_RF_1"[label="Broadcaster: /robot_state_publisher\nAverage rate: 50.556 Hz\nMost recent transform: 10.362 ( 0.000 sec old)\nBuffer length: 1.800 sec\n"];
+"Elbow_Fi_1" -> "Wrist_Theta_1"[label="Broadcaster: /robot_state_publisher\nAverage rate: 50.556 Hz\nMost recent transform: 10.362 ( 0.000 sec old)\nBuffer length: 1.800 sec\n"];
+"Elbow_Theta_1" -> "Elbow_Fi_1"[label="Broadcaster: /robot_state_publisher\nAverage rate: 50.556 Hz\nMost recent transform: 10.362 ( 0.000 sec old)\nBuffer length: 1.800 sec\n"];
+"Shoulder_Fi_1" -> "Elbow_Theta_1"[label="Broadcaster: /robot_state_publisher\nAverage rate: 50.556 Hz\nMost recent transform: 10.362 ( 0.000 sec old)\nBuffer length: 1.800 sec\n"];
+"Gripper_Core_1" -> "LSL__3__1"[label="Broadcaster: /robot_state_publisher\nAverage rate: 50.556 Hz\nMost recent transform: 10.362 ( 0.000 sec old)\nBuffer length: 1.800 sec\n"];
+"Wrist_Fi_1" -> "Gripper_Core_1"[label="Broadcaster: /robot_state_publisher\nAverage rate: 50.556 Hz\nMost recent transform: 10.362 ( 0.000 sec old)\nBuffer length: 1.800 sec\n"];
+"Gripper_Core_1" -> "RSL__1__1"[label="Broadcaster: /robot_state_publisher\nAverage rate: 50.556 Hz\nMost recent transform: 10.362 ( 0.000 sec old)\nBuffer length: 1.800 sec\n"];
+"LSL__3__1" -> "LeftProng__2__1"[label="Broadcaster: /robot_state_publisher\nAverage rate: 50.556 Hz\nMost recent transform: 10.362 ( 0.000 sec old)\nBuffer length: 1.800 sec\n"];
+"RSL__1__1" -> "RightProng__1__1"[label="Broadcaster: /robot_state_publisher\nAverage rate: 50.556 Hz\nMost recent transform: 10.362 ( 0.000 sec old)\nBuffer length: 1.800 sec\n"];
+"Shoulder_Theta_1" -> "Shoulder_Fi_1"[label="Broadcaster: /robot_state_publisher\nAverage rate: 50.556 Hz\nMost recent transform: 10.362 ( 0.000 sec old)\nBuffer length: 1.800 sec\n"];
+"Wrist_Theta_1" -> "Wrist_Fi_1"[label="Broadcaster: /robot_state_publisher\nAverage rate: 50.556 Hz\nMost recent transform: 10.362 ( 0.000 sec old)\nBuffer length: 1.800 sec\n"];
+edge [style=invis];
+ subgraph cluster_legend { style=bold; color=black; label ="view_frames Result";
+"Recorded at time: 10.362"[ shape=plaintext ] ;
+ }->"virtual_link";
+}

@@ -1,0 +1,2 @@
+float32[11] c_angles #current angle values as output as a result of change in posture due to cmd from ROS.
+float32[11] c_velocities #current velocity values as output as a result of change in velocity of wheels due to cmd from ROS.

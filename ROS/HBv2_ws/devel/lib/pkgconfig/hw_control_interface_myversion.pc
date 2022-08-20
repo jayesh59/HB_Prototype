@@ -1,0 +1,8 @@
+prefix=/home/ubuntu20/HBv2_ws/devel
+
+Name: hw_control_interface_myversion
+Description: Description of hw_control_interface_myversion
+Version: 0.0.0
+Cflags: -I/home/ubuntu20/HBv2_ws/src/hw_control_interface_myversion/include
+Libs: -L${prefix}/lib -lhw_control_interface_myversion
+Requires: cmake_modules control_toolbox controller_manager roscpp rospy std_msgs hardware_interface rosparam_shortcuts urdf

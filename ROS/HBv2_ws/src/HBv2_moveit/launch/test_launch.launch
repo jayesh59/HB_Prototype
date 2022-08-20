@@ -1,0 +1,62 @@
+<!-- the uncommented parts are the basic moveit requirements. others are additional features that were written for testing the compatibility with moveit.
+-->
+
+<launch>
+    <arg name="gazebo_gui" default="true"/>
+    <arg name="paused" default="false"/>
+    <arg name="use_rviz" default="true" />
+
+    <!-- these lines are to load the model to parameter server and then to spawn in gazebo.
+    <param command="$(find xacro)/xacro $(find Camera_URDF_description)/urdf/Camera_URDF.xacro" name="camera_description"/>
+    <node args="-param camera_description -urdf -model Camera_URDF" name="spawn_urdf" pkg="gazebo_ros" type="spawn_model"/>
+    -->
+
+    <!-- Load the URDF to the parameter server -->
+    <param name="robot_description" textfile="$(find HBV2_URDF_description)/urdf/HBV2_URDF.urdf"/>
+
+    <include file="$(dirname)/gazebo.launch" >
+    <arg name="paused" value="$(arg paused)"/>
+    <arg name="gazebo_gui" value="$(arg gazebo_gui)"/>
+    </include>
+
+    
+<!-- CORE  -->
+    <!-- Load controller settings  -->
+    <!-- Load controller manager  -->
+
+
+    <!-- Convert joint states to /tf tranforms -->
+    <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher"/>
+
+    <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher"/>
+
+<!-- MOVEIT -->
+    <include file="$(dirname)/moveit_rviz.launch" if="$(arg use_rviz)">
+        <arg name="rviz_config" value="$(dirname)/moveit.rviz"/>
+        <arg name="debug" value="false"/>
+    </include>
+    <!-- Load the URDF, SRDF and other .yaml configuration files on the param server -->
+    <include file="$(find HBv2_moveit)/launch/planning_context.launch">
+    <arg name="load_robot_description" value="true"/>
+    </include>
+    
+    <!--include file="$(find joystick_control)/launch/joystick_required_nodes.launch"/-->
+
+
+    <!-- Remap follow_joint_trajectory /-->
+    <remap from="/joint_trajectory_action" to="/position_trajectory_controller/follow_joint_trajectory"/>
+    <remap from="Gripper_controller/joint_trajectory_action" to="/gripper_controller/follow_joint_trajectory"/>
+
+    <!-- Run the main MoveIt executable without trajectory execution (we do not have controllers configured by default)  -->
+    <include file="$(find HBv2_moveit)/launch/move_group.launch">
+    <arg name="allow_trajectory_execution" value="true"/>
+    <arg name="moveit_controller_manager" value="simple"/>
+    </include>
+
+    <!--for using the camera model with the moveit arm, the following static transformations are necessary.
+        these eliminate the use of name space in model spawning.
+    <node pkg="tf" type="static_transform_publisher" name="camerabase_world" args="0 -0.5 0 0 0 0 /world /base_link 100"/> 
+    <node pkg="tf" type="static_transform_publisher" name="LCam_Base" args="0.048048 0.115824 0.325358 0 0 0 /base_link /Camera_L_1 100"/> 
+    <node pkg="tf" type="static_transform_publisher" name="RCam_Base" args="0.105324 0.058548 0.325358 0 0 0 /base_link /Camera_R_1 100"/>
+    -->
+</launch>

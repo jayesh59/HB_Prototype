@@ -1,0 +1,158 @@
+<?xml version="1.0" ?>
+<robot name="HBV2_URDF" xmlns:xacro="http://www.ros.org/wiki/xacro" >
+
+<transmission name="Elbow_Theta_tran">
+  <type>transmission_interface/SimpleTransmission</type>
+  <joint name="Elbow_Theta">
+    <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+  </joint>
+  <actuator name="Elbow_Theta_actr">
+    <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+    <mechanicalReduction>1</mechanicalReduction>
+  </actuator>
+</transmission>
+
+<transmission name="Wrist_Theta_tran">
+  <type>transmission_interface/SimpleTransmission</type>
+  <joint name="Wrist_Theta">
+    <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+  </joint>
+  <actuator name="Wrist_Theta_actr">
+    <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+    <mechanicalReduction>1</mechanicalReduction>
+  </actuator>
+</transmission>
+
+<transmission name="Shoulder_Theta_Joint_tran">
+  <type>transmission_interface/SimpleTransmission</type>
+  <joint name="Shoulder_Theta_Joint">
+    <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+  </joint>
+  <actuator name="Shoulder_Theta_Joint_actr">
+    <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+    <mechanicalReduction>1</mechanicalReduction>
+  </actuator>
+</transmission>
+
+<transmission name="GCore_RSL_tran">
+  <type>transmission_interface/SimpleTransmission</type>
+  <joint name="GCore_RSL">
+    <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+  </joint>
+  <actuator name="GCore_RSL_actr">
+    <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+    <mechanicalReduction>1</mechanicalReduction>
+  </actuator>
+</transmission>
+
+<transmission name="RSL_RightProng_tran">
+  <type>transmission_interface/SimpleTransmission</type>
+  <joint name="RSL_RightProng">
+    <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+  </joint>
+  <actuator name="RSL_RightProng_actr">
+    <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+    <mechanicalReduction>1</mechanicalReduction>
+  </actuator>
+</transmission>
+
+<transmission name="LSL_LeftProng_tran">
+  <type>transmission_interface/SimpleTransmission</type>
+  <joint name="LSL_LeftProng">
+    <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+  </joint>
+  <actuator name="LSL_LeftProng_actr">
+    <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+    <mechanicalReduction>1</mechanicalReduction>
+  </actuator>
+</transmission>
+
+<transmission name="GCore_LSL_tran">
+  <type>transmission_interface/SimpleTransmission</type>
+  <joint name="GCore_LSL">
+    <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+  </joint>
+  <actuator name="GCore_LSL_actr">
+    <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+    <mechanicalReduction>1</mechanicalReduction>
+  </actuator>
+</transmission>
+
+<transmission name="Base_WheelRF_tran">
+  <type>transmission_interface/SimpleTransmission</type>
+  <joint name="Base_WheelRF">
+    <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+  </joint>
+  <actuator name="Base_WheelRF_actr">
+    <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+    <mechanicalReduction>1</mechanicalReduction>
+  </actuator>
+</transmission>
+
+<transmission name="Base_WheelLF_tran">
+  <type>transmission_interface/SimpleTransmission</type>
+  <joint name="Base_WheelLF">
+    <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+  </joint>
+  <actuator name="Base_WheelLF_actr">
+    <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+    <mechanicalReduction>1</mechanicalReduction>
+  </actuator>
+</transmission>
+
+<transmission name="Base_WheelRB_tran">
+  <type>transmission_interface/SimpleTransmission</type>
+  <joint name="Base_WheelRB">
+    <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+  </joint>
+  <actuator name="Base_WheelRB_actr">
+    <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+    <mechanicalReduction>1</mechanicalReduction>
+  </actuator>
+</transmission>
+
+<transmission name="Base_WheelLB_tran">
+  <type>transmission_interface/SimpleTransmission</type>
+  <joint name="Base_WheelLB">
+    <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+  </joint>
+  <actuator name="Base_WheelLB_actr">
+    <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+    <mechanicalReduction>1</mechanicalReduction>
+  </actuator>
+</transmission>
+
+<transmission name="Shoulder_Fi_tran">
+  <type>transmission_interface/SimpleTransmission</type>
+  <joint name="Shoulder_Fi">
+    <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+  </joint>
+  <actuator name="Shoulder_Fi_actr">
+    <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+    <mechanicalReduction>1</mechanicalReduction>
+  </actuator>
+</transmission>
+
+<transmission name="Elbow_Fi_tran">
+  <type>transmission_interface/SimpleTransmission</type>
+  <joint name="Elbow_Fi">
+    <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+  </joint>
+  <actuator name="Elbow_Fi_actr">
+    <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+    <mechanicalReduction>1</mechanicalReduction>
+  </actuator>
+</transmission>
+
+<transmission name="Wrist_Fi_tran">
+  <type>transmission_interface/SimpleTransmission</type>
+  <joint name="Wrist_Fi">
+    <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+  </joint>
+  <actuator name="Wrist_Fi_actr">
+    <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+    <mechanicalReduction>1</mechanicalReduction>
+  </actuator>
+</transmission>
+
+</robot>

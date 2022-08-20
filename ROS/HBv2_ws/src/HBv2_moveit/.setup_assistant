@@ -1,0 +1,11 @@
+moveit_setup_assistant_config:
+  URDF:
+    package: HBV2_URDF_description
+    relative_path: urdf/HBV2_URDF.urdf
+    xacro_args: ""
+  SRDF:
+    relative_path: config/HBV2_URDF.srdf
+  CONFIG:
+    author_name: Buntu20
+    author_email: Buntu20@buntu.com
+    generated_timestamp: 1652911918

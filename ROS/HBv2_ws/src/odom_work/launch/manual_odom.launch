@@ -1,0 +1,9 @@
+<launch>
+    <include file="$(find odom_work)/launch/stereo_launch.launch"/>
+    <include file="$(find hb_hw_interface)/launch/manual_hw_interface.launch"/>
+    <include file="$(find rtabmap_ros)/launch/stereo_mapping.launch"/>
+    <!--node pkg="tf" type="static_transform_publisher" name="link1_broadcaster" args="0 0 0 0 0 0 1 base_link imu_link 100" /-->
+    <node pkg="robot_localization" type="ekf_localization_node" name="ekf_localization_node">
+        <rosparam command="load" file="$(find odom_work)/config/ekf_params.yaml"/>
+    </node>
+</launch>

@@ -1,0 +1,19 @@
+controller_list:
+  - name: fake_Arm_controller
+    type: $(arg fake_execution_type)
+    joints:
+      - Shoulder_Theta_Joint
+      - Shoulder_Fi
+      - Elbow_Theta
+      - Elbow_Fi
+      - Wrist_Theta
+      - Wrist_Fi
+  - name: fake_Gripper_controller
+    type: $(arg fake_execution_type)
+    joints:
+      - GCore_RSL
+initial:  # Define initial robot poses per group
+  - group: Arm
+    pose: Zero_Pos
+  - group: Gripper
+    pose: Close

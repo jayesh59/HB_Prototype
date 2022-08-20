@@ -1,0 +1,46 @@
+<launch>
+    <!--
+    <arg name="image_view" default="image_rect_color"/>
+    <node pkg="nodelet" type="nodelet" name="pipeline" args="manager" />
+    -->
+    <!--Arduino Nodes-->
+
+    <node pkg="rosserial_python" type="serial_node.py" name="ArduinoMega_master_node">
+        <param name="port" value="/dev/ttyUSB0"/>
+        <param name="baud" value="57600"/>
+    </node>
+    <!--
+    <include file="$(find jetson_csi_cam)/jetson_csi_cam.launch" ns="stereo">
+        <arg name="sensor_id" value="0" />                      
+        <arg name="cam_name" value="left" /> 
+        <arg name="frame_id" value="Camera_Housing_1"/>    
+    </include>
+    
+    <include file="$(find jetson_csi_cam)/jetson_csi_cam.launch" ns="stereo">
+        <arg name="sensor_id" value="1" />                    
+        <arg name="cam_name" value="right" /> 
+        <arg name="frame_id" value="Camera_Housing_1"/>   
+    </include>
+    -->
+    <node name="imu_node" pkg="mpu_6050_driver" type="imu_node.py"/>
+
+
+    <!--
+        
+    <include file="$(find stereo_image_proc)/launch/stereo_image_proc.launch" ns="stereo">
+        <arg name="manager" value="/pipeline"/>
+    </include>
+
+
+    <node name="stereo_image_proc" pkg="stereo_image_proc" type="stereo_image_proc" ns="stereo"  >
+        <param name="queue_size" value="20" />
+        <param name="approximate_sync" value="True" />
+    </node>
+
+    <node name="stereo_cam" pkg="image_view" type="stereo_view" output="screen" >
+        <param name="queue_size" value="20" />
+        <param name="approximate_sync" value="True" />
+        <remap from="image" to="$(arg image_view)" />
+    </node>     
+    -->
+</launch>

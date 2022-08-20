@@ -1,0 +1,8 @@
+prefix=/home/hb-jetson/camera_ws/devel
+
+Name: hb_hw_interface
+Description: Description of hb_hw_interface
+Version: 0.0.0
+Cflags: -I/home/hb-jetson/camera_ws/devel/include
+Libs: -L${prefix}/lib 
+Requires: 

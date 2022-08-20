@@ -1,0 +1,8 @@
+prefix=/home/ubuntu20/HBv2_ws/install
+
+Name: hb_hw_interface
+Description: Description of hb_hw_interface
+Version: 0.0.0
+Cflags: -I${prefix}/include
+Libs: -L${prefix}/lib 
+Requires: 
